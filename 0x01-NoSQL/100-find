@@ -1,0 +1,6 @@
+#!/bin/bash
+# Lists all documents with name starting by Holberton in the collection school.
+
+mongo "$1" <<EOF
+db.school.find({ "name": { "\$regex": "^Holberton", "\$options": "i" } })
+EOF
